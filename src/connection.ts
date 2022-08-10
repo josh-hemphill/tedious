@@ -1,10 +1,10 @@
 import crypto from 'crypto';
 import os from 'os';
-import { Socket } from 'net';
-import dns from 'dns';
+import { Socket } from './node-deno-shims/net';
+import dns from './node-deno-shims/dns';
 
-import constants from 'constants';
-import { SecureContextOptions } from 'tls';
+import constants from './node-deno-shims/constants';
+import { SecureContextOptions } from './node-deno-shims/tls';
 
 import { Readable } from 'stream';
 
@@ -45,7 +45,7 @@ import { BulkLoadPayload } from './bulk-load-payload';
 import { Collation } from './collation';
 
 import AggregateError from 'es-aggregate-error';
-import { version } from '../package.json';
+import { version } from './node-deno-shims/packageJson';
 import { URL } from 'url';
 import { AttentionTokenHandler, InitialSqlTokenHandler, Login7TokenHandler, RequestTokenHandler, TokenHandler } from './token/handler';
 
@@ -1809,7 +1809,7 @@ class Connection extends EventEmitter {
   /**
    * A secure connection has been established.
    */
-  on(event: 'secure', listener: (cleartext: import('tls').TLSSocket) => void): this
+  on(event: 'secure', listener: (cleartext: import('./node-deno-shims/tls').TLSSocket) => void): this
 
   on(event: string | symbol, listener: (...args: any[]) => void) {
     return super.on(event, listener);
@@ -1854,7 +1854,7 @@ class Connection extends EventEmitter {
   /**
    * @private
    */
-  emit(event: 'secure', cleartext: import('tls').TLSSocket): boolean
+  emit(event: 'secure', cleartext: import('./node-deno-shims/tls').TLSSocket): boolean
   /**
    * @private
    */

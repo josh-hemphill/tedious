@@ -1,6 +1,6 @@
-import dgram from 'dgram';
-import dns from 'dns';
-import net from 'net';
+import dgram from './node-deno-shims/dgram';
+import dns from './node-deno-shims/dns';
+import net from './node-deno-shims/net';
 import * as punycode from 'punycode';
 import { AbortSignal } from 'node-abort-controller';
 

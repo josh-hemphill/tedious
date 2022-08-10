@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "tedious": "../deno_lib/tedious.ts",
+    "asserts": "https://deno.land/std@0.151.0/testing/asserts.ts"
+  }
+}

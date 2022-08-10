@@ -1,8 +1,8 @@
 import DuplexPair from 'native-duplexpair';
 
 import { Duplex } from 'stream';
-import * as tls from 'tls';
-import { Socket } from 'net';
+import * as tls from './node-deno-shims/tls';
+import { Socket } from './node-deno-shims/net';
 import { EventEmitter } from 'events';
 
 import Debug from './debug';

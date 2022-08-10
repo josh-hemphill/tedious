@@ -8,22 +8,35 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": [ "esnext" ],
+    "lib": [
+      "esnext"
+    ],
+    "noUnusedLocals": true, // !important for denoify
+    "noUnusedParameters": true, // !important  for denoify
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "outDir": "lib/"
   },
-
   "include": [
     "types/*.d.ts",
     "src/**/*.ts",
     "test/**/*.ts",
     "test/**/*.js",
+    "build/**/*.js",
   ],
-
+  "exclude": [ // !important
+    "node_modules/",
+    "lib/",
+    "deno_lib/",
+    "src/**/*.deno.ts",
+    "src/**/*.deno.tsx"
+  ],
   "typedocOptions": {
     "name": "Tedious",
     "out": "./docs",
-    "entryPoints": ["./src/tedious.ts"]
+    "entryPoints": [
+      "./src/tedious.ts"
+    ]
   }
 }

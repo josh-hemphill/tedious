@@ -1,5 +1,5 @@
-import net from 'net';
-import dns, { LookupAddress } from 'dns';
+import net from './node-deno-shims/net';
+import dns, { LookupAddress } from './node-deno-shims/dns';
 
 import * as punycode from 'punycode';
 import { AbortSignal } from 'node-abort-controller';
